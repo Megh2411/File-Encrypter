@@ -1,8 +1,12 @@
-node {
+node('docker-agent') {
+
     try {
 
         stage('Build') {
             sh '''
+            echo "Running on node: $NODE_NAME"
+            hostname
+
             echo "Building Java project..."
             echo "Listing workspace contents:"
             ls
